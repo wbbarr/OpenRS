@@ -4,9 +4,11 @@
 
 import re
 import logging
+import multiprocessing
 
 options = {}
-logging.basicConfig(filename="openrs.log", level = logging.DEBUG, format = '%(asctime)s || %(levelname)s || %(message)s')
+LOG_FORMAT = '%(asctime)s || %(levelname)s || %(message)s'
+logging.basicConfig(filename="openrs.log", level = logging.DEBUG, format = LOG_FORMAT)
 
 #Put all required config file options in the optionKeysList -- will pull out all config options during file reading.  
 optionKeys = ["DBHost", "DBUser", "DBPass", "DBName", "Salt", "CertFile", "KeyFile", "Domain", "ListenPort"]
